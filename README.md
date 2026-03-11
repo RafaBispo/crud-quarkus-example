@@ -6,14 +6,14 @@ Neste projeto foi utilizado o padrão Repository do Quarkus.
 
 Para saber mais sobre o Quarkus, visite: <https://quarkus.io/>.
 
-## Tecnologias Utilizadas
+## - Tecnologias Utilizadas
 
 - **Java**: Versão 25
 - **Quarkus**: Framework Java para desenvolvimento de aplicações nativas em nuvem
 - **Gradle**: Ferramenta de build
 - **PostgreSQL**: Banco de dados relacional
 
-## Bibliotecas e Dependências
+## - Bibliotecas e Dependências
 
 - **Quarkus REST**: Para criação de APIs REST
 - **Quarkus REST Jackson**: Para serialização JSON
@@ -24,7 +24,7 @@ Para saber mais sobre o Quarkus, visite: <https://quarkus.io/>.
 - **Lombok**: Para redução de boilerplate em Java
 - **JUnit e REST Assured**: Para testes
 
-## Estrutura de Pastas
+## - Estrutura de Pastas
 
 ```
 crud-quarkus-example/
@@ -53,7 +53,7 @@ O projeto segue o padrão em camadas:
 - **Mapper**: Conversão entre DTOs e Entities
 - **Exception**: Tratamento customizado de exceções
 
-## Endpoints da API
+## - Endpoints da API
 
 A aplicação expõe os seguintes endpoints para gerenciamento de usuários:
 
@@ -73,7 +73,7 @@ A aplicação expõe os seguintes endpoints para gerenciamento de usuários:
 }
 ```
 
-## Como executar o projeto
+## - Como executar o projeto
 ### 1 - Clonar o repositório:
 
 ```shell script
@@ -90,10 +90,32 @@ cd crud-quarkus-example
 ```shell script
 ./gradlew quarkusDev
 ```
+## - Testes
+### Arquivos de Teste
 
-## Melhorias Futuras
-- Implementar autenticação e autorização
-- Adicionar testes unitários e de integração
-- Implementar validação de dados
-- Implementar cache
-- Criar uma interface gráfica para gerenciamento de usuários
+- **IntegrationTests.java** - Testes de integração dos endpoints REST
+- **UserServiceTest.java** - Testes unitários da lógica de negócio
+- **UserControllerTest.java** - Testes unitários do controlador
+
+### Executar Testes
+
+```shell script
+# Executar todos os testes
+./gradlew test
+
+# Executar apenas testes de integração
+./gradlew test --tests IntegrationTests
+
+# Executar apenas testes do service
+./gradlew test --tests UserServiceTest
+
+# Executar apenas testes do controller
+./gradlew test --tests UserControllerTest
+```
+
+## - Melhorias Futuras
+- [X] Adicionar testes unitários e de integração
+- [] Implementar validação de dados
+- [] Implementar cache
+- [] Implementar autenticação e autorização
+- [] Criar uma interface gráfica para gerenciamento de usuários
