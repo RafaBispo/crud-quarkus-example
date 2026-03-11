@@ -1,6 +1,8 @@
 # crud-quarkus
 
-Projeto criado para estudos do Quarkus - Framework Java Supersônico/Subatômico.
+Projeto de crud de usuários criado para estudos do Quarkus - Framework Java Supersônico/Subatômico.
+
+Neste projeto foi utilizado o padrão Repository do Quarkus.
 
 Para saber mais sobre o Quarkus, visite: <https://quarkus.io/>.
 
@@ -22,6 +24,35 @@ Para saber mais sobre o Quarkus, visite: <https://quarkus.io/>.
 - **Lombok**: Para redução de boilerplate em Java
 - **JUnit e REST Assured**: Para testes
 
+## Estrutura de Pastas
+
+```
+crud-quarkus-example/
+├── src/
+│   ├── main/
+│   │   ├── java/
+│   │   │   └── com/rboliveira/
+│   │   │       ├── controller/
+│   │   │       ├── dto/
+│   │   │       ├── entity/
+│   │   │       ├── exception/
+│   │   │       ├── mapper/
+│   │   │       ├── repository/
+│   │   │       └── service/
+```
+
+### Padrão de Arquitetura
+
+O projeto segue o padrão em camadas:
+
+- **Controller**: Camada de apresentação, responsável por receber requisições HTTP e responder
+- **Service**: Camada de lógica de negócio, contém as regras da aplicação
+- **Repository**: Camada de acesso a dados, utiliza Hibernate Panache para operações CRUD
+- **Entity**: Representação das tabelas do banco de dados
+- **DTO**: Objetos de transferência de dados entre camadas
+- **Mapper**: Conversão entre DTOs e Entities
+- **Exception**: Tratamento customizado de exceções
+
 ## Endpoints da API
 
 A aplicação expõe os seguintes endpoints para gerenciamento de usuários:
@@ -42,10 +73,27 @@ A aplicação expõe os seguintes endpoints para gerenciamento de usuários:
 }
 ```
 
-## Executando a aplicação em dev mode (usando o gradle)
+## Como executar o projeto
+### 1 - Clonar o repositório:
 
-Execute o comando via terminal:
+```shell script
+git clone https://github.com/RafaBispo/crud-quarkus-example.git
+```
+### 2 - Acessar o diretório do projeto:
+
+```shell script
+cd crud-quarkus-example
+```
+
+## 3 - Execute o comando via terminal:
 
 ```shell script
 ./gradlew quarkusDev
 ```
+
+## Melhorias Futuras
+- Implementar autenticação e autorização
+- Adicionar testes unitários e de integração
+- Implementar validação de dados
+- Implementar cache
+- Criar uma interface gráfica para gerenciamento de usuários
